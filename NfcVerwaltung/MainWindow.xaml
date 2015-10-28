@@ -6,47 +6,52 @@
         xmlns:local="clr-namespace:NfcVerwaltung"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
-    <Grid Margin="5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="250"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Nfc"/>
-                <DataGridTextColumn Header="Profilname"/>
-                <DataGridTextColumn Header="Passowrd"/>
-                <DataGridTextColumn Header="Vorname"/>
-                <DataGridTextColumn Header="Nachname"/>
-                <DataGridTextColumn Header="Ablaufdatum"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Grid.Column="1">
-            <DockPanel>
-                <Label>NfcId</Label>
-                <Label Name="lNfcID"/>
-            </DockPanel>
-            <DockPanel Margin="0,5,0,0">
-                <Label Margin="0,0,5,0">Profilname:</Label>
-                <TextBox Name="tbUser" DockPanel.Dock="Right"/>
-            </DockPanel>
-            <DockPanel Margin="0,5,0,0" LastChildFill="False">
-                <Label Margin="0,0,5,0">Passwort:</Label>
-                <PasswordBox Name="pwbPw" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}"/>
-            </DockPanel>
-            <DockPanel Margin="0,5,0,0" LastChildFill="False">
-                <Label Margin="0,0,5,0">Vorname:</Label>
-                <TextBox Name="tbVorN" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}"/>
-            </DockPanel>
-            <DockPanel Margin="0,5,0,0" LastChildFill="False">
-                <Label Margin="0,0,5,0">Nachname:</Label>
-                <TextBox Name="tbNachN" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}"/>
-            </DockPanel>
-            <DockPanel Margin="0,5,0,0">
-                <Label Margin="0,0,5,0">Ablaufdatum:</Label>
-                <TextBox Name="tbAblauf"/>
-            </DockPanel>
-        </StackPanel>
-        
-    </Grid>
+	<Grid Margin="5">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="250"/>
+		</Grid.ColumnDefinitions>
+		<DataGrid>
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="NfcTag"/>
+				<DataGridTextColumn Header="Profilname"/>
+				<DataGridTextColumn Header="Passowrd"/>
+				<DataGridTextColumn Header="Vorname"/>
+				<DataGridTextColumn Header="Nachname"/>
+				<DataGridTextColumn Header="Zugangsprofil"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<StackPanel Grid.Column="1">
+			<DockPanel Margin="0,5,0,0">
+				<Label Margin="0,0,5,0">Personalnummer:</Label>
+				<TextBox Name="tbUser" DockPanel.Dock="Right"/>
+			</DockPanel>
+			<DockPanel Margin="0,5,0,0" LastChildFill="False">
+				<Label Margin="0,0,5,0">Passwort:</Label>
+				<PasswordBox Name="pwbPw" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}"/>
+			</DockPanel>
+			<DockPanel Margin="0,5,0,0" LastChildFill="False">
+				<Label Margin="0,0,5,0">Vorname:</Label>
+				<TextBox Name="tbVorN" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}"/>
+			</DockPanel>
+			<DockPanel Margin="0,5,0,0" LastChildFill="False">
+				<Label Margin="0,0,5,0">Nachname:</Label>
+				<TextBox Name="tbNachN" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}"/>
+			</DockPanel>
+			<DockPanel Margin="0,5,0,0" LastChildFill="False">
+				<Label Margin="0,0,5,0">NFC-Tag:</Label>
+				<ComboBox Name="cmbTag" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}" SelectionChanged="cmbTag_SelectionChanged" >
+					<ComboBoxItem Content="-Bearbeiten-" Selected="ComboBoxItem_Selected"/>
+				</ComboBox>
+			</DockPanel>
+			<DockPanel Margin="0,5,0,0" LastChildFill="False">
+				<Label Margin="0,0,5,0">Zugangsprofil:</Label>
+				<ComboBox Name="cmbProfil" DockPanel.Dock="Right" Width="{Binding ElementName=tbUser,Path=ActualWidth}" SelectionChanged="cmbProfil_SelectionChanged">
+					<ComboBoxItem Content="-Bearbeiten-"/>
+				</ComboBox>
+			</DockPanel>
+			
+		</StackPanel>
+
+	</Grid>
 </Window>

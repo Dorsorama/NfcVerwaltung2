@@ -63,6 +63,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EnterName.xaml.cs">
+      <DependentUpon>EnterName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NFCTag.xaml.cs">
+      <DependentUpon>NFCTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZugangsProfil.xaml.cs">
+      <DependentUpon>ZugangsProfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZuProfil.cs" />
+    <Page Include="EnterName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,8 +89,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NFCTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZugangsProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NFC.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +127,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\cancel.png" />
+    <Resource Include="Pics\tick.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
